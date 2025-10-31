@@ -1,23 +1,25 @@
 ---
 import "../styles/global.css";
 import NavigationBar from "../components/NavigationBar.jsx";
+import Footer from "../components/Footer.jsx";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/images/icons/show.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>ShowcaseX</title>
+    <title>ShowcaseX — Libérez votre créativité</title>
   </head>
 
-  <body class="bg-gray-50  text-gray-900 ">
+  <body class="bg-gray-50 text-gray-900 selection:bg-blue-600 selection:text-white">
     <NavigationBar client:load />
-    <main class="pt-20">
+    <main class="pt-24">
       <slot />
     </main>
+    <Footer client:load />
   </body>
 </html>
 
