@@ -1,0 +1,63 @@
+---
+import { motion } from "framer-motion";
+---
+
+<section class="relative bg-white overflow-hidden">
+  <!-- Fond graphique doux -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute inset-0 bg-gradient-to-tr from-blue-200/40 via-pink-100/30 to-orange-100/40 blur-3xl opacity-70"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-28 md:py-36 flex flex-col-reverse md:flex-row items-center justify-between gap-14 md:gap-20">
+    
+    <!-- Texte principal -->
+    <motion.div client:load
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      className="flex-1 flex flex-col items-start space-y-6 text-left"
+    >
+      <h1 class="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-500 to-pink-500 drop-shadow-sm">
+        Libérez votre créativité
+      </h1>
+
+      <p class="text-lg md:text-xl text-gray-700 max-w-lg leading-relaxed">
+        ShowcaseX permet aux créateurs, designers et studios de donner vie à leurs idées,
+        d’attirer l’attention qu’ils méritent et d’inspirer la prochaine génération d’innovateurs.
+      </p>
+
+      <div class="flex flex-wrap gap-4 pt-4">
+        <a
+          href="/get-started"
+          class="px-8 py-3 rounded-full font-semibold text-lg bg-gradient-to-r from-orange-600 to-pink-600 text-white shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-transform duration-200"
+        >
+          Commencer
+        </a>
+        <a
+          href="/explore"
+          class="px-8 py-3 rounded-full font-semibold text-lg border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition duration-200"
+        >
+          Explorer
+        </a>
+      </div>
+    </motion.div>
+
+    <!-- Illustration 3D -->
+    <motion.div client:load
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      whileHover={{ rotateY: 12, rotateX: 4, scale: 1.03 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="flex-1 flex justify-center md:justify-end perspective-1000"
+    >
+      <div class="relative group">
+        <div class="absolute -inset-2 bg-gradient-to-r from-blue-500 via-pink-500 to-orange-400 opacity-60 blur-lg rounded-3xl group-hover:opacity-80 transition-all duration-500"></div>
+        <img
+          src="/images/1.jpeg"
+          alt="Illustration Hero"
+          class="relative w-full max-w-lg md:max-w-xl rounded-2xl shadow-2xl transform-gpu group-hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+    </motion.div>
+  </div>
+</section>
