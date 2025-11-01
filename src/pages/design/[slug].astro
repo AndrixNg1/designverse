@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { designs } from "../../data/designs.js";
+import SecondaryGallery from "../../components/jsxComponents/SecondaryGallery.jsx";
 
 // Génération des pages à partir des slugs
 export function getStaticPaths() {
@@ -11,7 +12,6 @@ export function getStaticPaths() {
 }
 
 const { design } = Astro.props;
-const secondaryImages = design.secondaryImages || [];
 ---
 
 <Layout title={design.title}>
@@ -82,23 +82,8 @@ const secondaryImages = design.secondaryImages || [];
           </div>
         </div>
 
-        <!-- IMAGES SECONDAIRES -->
-        <div class="bg-white shadow-md rounded-3xl p-6 space-y-4">
-          <h4 class="text-lg font-semibold text-gray-900 mb-4">
-            Galerie secondaire
-          </h4>
-          <div class="grid grid-cols-2 gap-4">
-            {
-              secondaryImages.map((img) => (
-                <img
-                  src={img}
-                  alt="Secondary design image"
-                  class="w-full h-32 object-cover rounded-xl hover:scale-105 transition-transform duration-300 cursor-pointer"
-                />
-              ))
-            }
-          </div>
-        </div>
+        <!-- GALERIE SECONDAIRE -->
+        <SecondaryGallery images={design.secondaryImages} client:load />
       </aside>
     </div>
   </section>
