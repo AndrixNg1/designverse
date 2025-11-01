@@ -125,7 +125,7 @@ git push -u origin main
 ## 💡 Contribuer
 
 Toute contribution est la bienvenue !
-Tu peux ouvrir une *issue* ou proposer une *pull request* pour :
+Tu peux ouvrir une *issue* ou proposer une *pull request* sur la branche dev pour :
 
 * Corriger un bug
 * Améliorer le design
