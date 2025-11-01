@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { designs } from "../../data/designs.js";
+
+// 🔹 Fonction obligatoire : on génère les pages à partir des slugs
+export function getStaticPaths() {
+  return designs.map((item) => ({
+    params: { slug: item.slug },
+    props: { design: item },
+  }));
+}
+
+const { design } = Astro.props;
+---
+
+<Layout title={design.title}>
+  <section class="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-6 py-24">
+    <div class="max-w-3xl mx-auto bg-white shadow-xl rounded-3xl overflow-hidden">
+      <img src={design.image} alt={design.title} class="w-full h-96 object-cover" />
+
+      <div class="p-10 text-center">
+        <img
+          src={design.avatar}
+          alt={design.author}
+          class="w-16 h-16 rounded-full border-2 border-orange-500 mx-auto mb-4"
+        />
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-3">{design.title}</h1>
+        <p class="text-gray-600 mb-2">
+          par <span class="font-semibold text-gray-800">{design.author}</span>
+        </p>
+        <p class="mt-6 text-lg text-gray-700 leading-relaxed">{design.description}</p>
+
+        <a
+          href="/explore"
+          class="mt-10 inline-block px-8 py-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full font-semibold shadow-md hover:shadow-xl hover:scale-[1.05] transition-all duration-300"
+        >
+          ← Retour à la galerie
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
