@@ -79,8 +79,8 @@ Pensé pour la performance, la modularité et une expérience fluide grâce à *
 ## 🚀 Installation du projet
 
 ```bash
-git clone https://github.com/AndrixNg1/designverse.git
-cd designverse
+git clone https://github.com/AndrixNg1/ShowcaseX.git
+cd git clone https://github.com/AndrixNg1/ShowcaseX.git
 npm install
 npm install @astrojs/react react react-dom
 npx astro add react
@@ -125,7 +125,7 @@ git push -u origin main
 ## 💡 Contribuer
 
 Toute contribution est la bienvenue !
-Tu peux ouvrir une *issue* ou proposer une *pull request* pour :
+Tu peux ouvrir une *issue* ou proposer une *pull request* sur la branche dev pour :
 
 * Corriger un bug
 * Améliorer le design
