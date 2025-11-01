@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+/**
+ * @param {{ images: string[] }} props
+ */
 export default function SecondaryGallery({ images = [] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +49,6 @@ export default function SecondaryGallery({ images = [] }) {
               className="w-full h-auto rounded-xl shadow-lg"
             />
 
-            {/* Navigation */}
             <button
               className="absolute top-1/2 left-0 transform -translate-y-1/2 text-white text-2xl p-3 bg-black/50 rounded-r-full hover:bg-black/70 transition"
               onClick={prevImage}
@@ -60,7 +62,6 @@ export default function SecondaryGallery({ images = [] }) {
               ›
             </button>
 
-            {/* Close */}
             <button
               className="absolute top-2 right-2 text-white text-3xl font-bold p-2 hover:text-orange-400"
               onClick={closeModal}
