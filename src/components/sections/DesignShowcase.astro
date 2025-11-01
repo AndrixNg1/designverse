@@ -1,0 +1,82 @@
+---
+const designs = [
+  {
+    id: 1,
+    title: "Interface SaaS futuriste",
+    author: "Alexandre N.",
+    avatar: "/images/icons/show.png",
+    image: "/images/2.png",
+  },
+  {
+    id: 2,
+    title: "Dashboard analytique immersif",
+    author: "Mila K.",
+    avatar: "/images/icons/show.png",
+    image: "/images/2.png",
+  },
+  {
+    id: 3,
+    title: "Application mobile minimaliste",
+    author: "Kenji T.",
+    avatar: "/images/icons/show.png",
+    image: "/images/2.png",
+  },
+];
+---
+
+<section class="relative py-28 bg-white overflow-hidden">
+  <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
+      Explorez l’univers créatif de nos 
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
+        designers visionnaires
+      </span>
+    </h2>
+
+    <p class="mt-6 text-lg text-gray-700 max-w-2xl mx-auto">
+      Découvrez des créations uniques — affiches, interfaces, logos et concepts signés par les meilleurs talents de notre communauté graphique.
+    </p>
+
+    <div class="mt-20 grid gap-12 md:grid-cols-3">
+      {designs.map((item) => (
+        <div
+          class="group relative overflow-hidden rounded-3xl bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-500 hover:scale-[1.03]"
+        >
+          <!-- Image -->
+          <div class="relative">
+            <img
+              src={item.image}
+              alt={item.title}
+              class="w-full h-64 object-cover rounded-t-3xl transition-transform duration-700 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          </div>
+
+          <!-- Infos -->
+          <div class="p-6 flex items-center gap-4 text-left">
+            <img
+              src={item.avatar}
+              alt={item.author}
+              class="w-12 h-12 rounded-full border-2 border-orange-400 object-cover"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">
+                {item.title}
+              </h3>
+              <p class="text-sm text-gray-600 mt-1">
+                par <span class="font-medium text-gray-800">{item.author}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <a
+      href="/gallery"
+      class="mt-20 inline-block px-10 py-4 bg-gradient-to-r from-orange-500 via-pink-500 to-red-400 text-white font-semibold rounded-full shadow-md hover:shadow-xl hover:scale-[1.07] transition-all duration-300"
+    >
+      Découvrir plus de créations →
+    </a>
+  </div>
+</section>
