@@ -7,7 +7,7 @@ export const designs = [
     image: "/images/2.png",
     slug: "interface-saas-futuriste",
     description:
-      "Une interface moderne conçue pour un SaaS orienté productivité, alliant fluidité visuelle et expérience utilisateur intuitive. Le design s’appuie sur des dégradés subtils et une typographie équilibrée pour créer un environnement à la fois futuriste et accessible.",
+      "Une interface SaaS au design futuriste, combinant performance et esthétique épurée. Pensée pour les produits next-gen orientés productivité.",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const designs = [
     image: "/images/2.png",
     slug: "dashboard-analytique-immersif",
     description:
-      "Un tableau de bord dynamique pensé pour la visualisation de données complexes. L’objectif : offrir une lecture claire et impactante grâce à une hiérarchie visuelle forte et des contrastes précis.",
+      "Un tableau de bord immersif aux animations fluides et à la visualisation claire des données. Conçu pour les équipes data-driven.",
   },
   {
     id: 3,
@@ -27,6 +27,6 @@ export const designs = [
     image: "/images/2.png",
     slug: "application-mobile-minimaliste",
     description:
-      "Un concept mobile axé sur la simplicité et la lisibilité. Chaque élément est optimisé pour offrir une expérience fluide, sans distraction, tout en gardant une identité graphique marquée et élégante.",
+      "Une application mobile ultra-minimaliste alliant simplicité, accessibilité et expérience utilisateur raffinée.",
   },
 ];
