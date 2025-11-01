@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 /**
  * @param {{ images: string[] }} props
@@ -41,34 +42,42 @@ export default function SecondaryGallery({ images = [] }) {
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-          <div className="relative max-w-4xl w-full px-4">
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-8">
+          {/* Flèche gauche */}
+          <button
+            onClick={prevImage}
+            className="absolute left-8 bg-white/10 hover:bg-orange-500/80 text-white p-4 rounded-full backdrop-blur-md transition-all shadow-lg"
+            aria-label="Image précédente"
+          >
+            <ChevronLeft size={34} />
+          </button>
+
+          {/* Image principale */}
+          <div className="relative max-w-5xl w-full">
             <img
               src={images[currentIndex]}
               alt={`Selected image ${currentIndex + 1}`}
-              className="w-full h-auto rounded-xl shadow-lg"
+              className="w-full h-auto rounded-2xl shadow-2xl border border-white/10"
             />
 
+            {/* Bouton de fermeture */}
             <button
-              className="absolute top-1/2 left-0 transform -translate-y-1/2 text-white text-2xl p-3 bg-black/50 rounded-r-full hover:bg-black/70 transition"
-              onClick={prevImage}
-            >
-              ‹
-            </button>
-            <button
-              className="absolute top-1/2 right-0 transform -translate-y-1/2 text-white text-2xl p-3 bg-black/50 rounded-l-full hover:bg-black/70 transition"
-              onClick={nextImage}
-            >
-              ›
-            </button>
-
-            <button
-              className="absolute top-2 right-2 text-white text-3xl font-bold p-2 hover:text-orange-400"
               onClick={closeModal}
+              className="absolute -top-12 right-0 bg-white/10 hover:bg-red-500/80 text-white p-3 rounded-full backdrop-blur-md transition-all shadow-lg"
+              aria-label="Fermer la galerie"
             >
-              ×
+              <X size={26} />
             </button>
           </div>
+
+          {/* Flèche droite */}
+          <button
+            onClick={nextImage}
+            className="absolute right-8 bg-white/10 hover:bg-orange-500/80 text-white p-4 rounded-full backdrop-blur-md transition-all shadow-lg"
+            aria-label="Image suivante"
+          >
+            <ChevronRight size={34} />
+          </button>
         </div>
       )}
     </div>
